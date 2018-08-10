@@ -118,12 +118,12 @@ run_all(){
          files=$(tail -n+2 $f | cut -f 6 )
       fi
       echo populate_results $species $files
-      #populate_results $species $files
+      populate_results $species $files
    done
 }
 if [ "$0" = "$BASH_SOURCE" ] ; then
    cd $( dirname $0)
-   # rm out/*
+   rm out/*
    mkdir -p out log
    logPath=log/run_all.WBPS${PARASITE_VERSION}.log
    echo populate_results schisto_test | tee /dev/stderr >> $logPath
